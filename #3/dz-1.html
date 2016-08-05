@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ-1</title>
+</head>
+<body>
+    <script>
+        let array = [1, 2, 3, 4, 5, 6];
+
+        var myForEach = function (array) {
+            for (var i = 0; i < array.length; i++) {
+                console.log(array[i]);
+            }
+        };
+        console.log('аналог forEach:');
+        myForEach(array);
+
+        var myFilter = function (array, condition) {
+            for (var i = 0; i < array.length; i++) {
+                if(condition(array[i])) {
+                    console.log(array[i]);
+                }
+            }
+        };
+
+        var conditionForFilter = function (item) {
+            return item > 4;
+        };
+
+        console.log('аналог filter:');
+        myFilter(array, conditionForFilter);
+
+        var myMap = function (array, condition) {
+            var newArray = [];
+            for (var i = 0; i < array.length; i++) {
+                newArray.push(condition(array[i]));
+            }
+            return newArray;
+        };
+
+        var conditionForMap = function (item) {
+            return item * item;
+        };
+
+        console.log('аналог map:');
+        console.log(myMap(array, conditionForMap));
+
+        var mySlice = function (array, start, end) {
+            var newArray = [];
+            if(end == undefined) {
+                end = array.length;
+            }
+            if(start < 0 ) {
+                start = array.length + start;
+                if( end == undefined){
+                    end = 0;
+                } else if(end < 0) {
+                    end = array.length + end;
+                } else if(end > 0) {
+                    end = array.length - end;
+                }
+                try {
+                    if(end > start) {
+                        throw new Error('неверный формат ввода параметров');
+                    }
+                } catch(e) {
+                    console.log(`${e.name}: ${e.message}`);
+                }
+                for (var i = start; i > end; i--) {
+                    newArray.push(array[i]);
+                }
+            } else {
+                for (var i = start; i < end; i++) {
+                    newArray.push(array[i]);
+                }
+            }
+            return newArray;
+        };
+
+        console.log('аналог slice:');
+        console.log(mySlice(array, -2, -4));
+
+        var callbackForReduce = function (previousValue,initialValue, currentItem) {
+            if(previousValue == null) {
+                previousValue = initialValue;
+            }
+            return previousValue + currentItem;
+        };
+
+        var myReduce = function (array, callback, initialValue) {
+            var result= null;
+            if(initialValue == undefined) {
+                initialValue = array[0];
+                for (var i = 1; i < array.length; i++) {
+                    result = callback(result, initialValue, array[i]);
+                }
+            } else {
+                for (var i = 0; i < array.length; i++) {
+                    result = callback(result, initialValue, array[i]);
+                }
+            }
+            return result;
+        };
+
+        console.log('аналог reduce:');
+        console.log(myReduce(array, callbackForReduce, 0));
+
+        var mySplice = function (array, start, deleteCount, newElements) {
+            var deletedElements = [];
+            for(var i = start; i < start + deleteCount; i++) {
+                deletedElements.push(array[i]);
+            }
+            var newArray = [];
+            for (var i = 0; i < start; i++){
+                newArray.push(array[i]);
+            }
+            if(!(newElements == undefined)){
+                for (var i = 0; i < newElements.length; i++){
+                    newArray.push(newElements[i]);
+                }
+            }
+            if(start + deleteCount < array.length){
+                for (var i = start + deleteCount; i < array.length; i++){
+                    newArray.push(array[i]);
+                }
+            }
+            for (var i = 0; i < newArray.length; i++) {
+                array[i] = newArray[i];
+            }
+            return deletedElements;
+        };
+
+
+
+        console.log('аналог splice:');
+        console.log('массив до splice');
+        console.log(array);
+        console.log('удаленные элементы');
+        console.log(mySplice(array, 3, 2, [78, 89, 90]));
+        console.log('массив после splice');
+        console.log(array);
+    </script>
+</body>
+</html>
