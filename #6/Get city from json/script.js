@@ -14,6 +14,7 @@ var load = function(url) {
 
         xhr.onload = function (evt) {
             xhr.onerror = null;
+            clearTimeout(xhrLoadTimeout);
             var loadedData = JSON.parse(evt.target.response);
             resolve(loadedData);
         };
