@@ -1,5 +1,7 @@
-build/
-node_modules/
+**/node_modules/
+**/Gruntfile.js
+**/package.json
+**/drugofiltr.jpg
 .DS_Store
 Thumbs.db
 .idea
@@ -8,4 +10,4 @@ Thumbs.db
 *.psd
 *.ai
 *.pdf
-css/*.css
+*.less

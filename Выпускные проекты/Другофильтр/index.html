@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Другофильтр</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="image/logo.png" alt="logo">
+    </div>
+    <div class="friends-filter">
+        <div class="friends-filter__header">
+            <p class="friends-filter__title">Выберите друзей</p>
+            <button class="friends-filter__close"></button>
+        </div>
+        <div class="friends-filter__friends">
+            <input type="text" name="search" class="friends-filter__search--my-friend" placeholder="Начните вводить имя друга">
+            <div class="friends-filter__list">
+                <p class="friends-filter__list-title">Ваши друзья</p>
+                <ul class="friends-filter__items">
+                    <li class="friends-filter__item">
+                        <img src="image/avatar.png" alt="Добавить друга в список" class="friends-filter__avatar">
+                        <p class="friends-filter__name">
+                            Иришка Кочерыжка
+                        </p>
+                        <button class="friends-filter__btn--add"></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="friends-filter__friends">
+            <input type="text" name="search" class="friends-filter__search--friend-in-list" placeholder="Название">
+            <div class="friends-filter__list">
+                <p class="friends-filter__list-title">Друзья в списке</p>
+                <ul class="friends-filter__items">
+                    <li class="friends-filter__item">
+                        <img src="image/avatar.png" alt="Удалить друга из списка" class="friends-filter__avatar">
+                        <p class="friends-filter__name">
+                            Иришка Кочерыжка
+                        </p>
+                        <button class="friends-filter__btn--delete"></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button class="friends-filter__save">Сохранить</button>
+    </div>
+    <div class="friends-filter__overlay"></div>
+    <script src="script/script.js"></script>
+</body>
+</html>
