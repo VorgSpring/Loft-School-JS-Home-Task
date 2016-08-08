@@ -29,18 +29,6 @@ var load = function(url) {
     });
 };
 
-var sortByName = function (data) {
-    var list = data.slice();
-    return list.sort(function (a, b) {
-        if(a.name > b.name)
-            return 1;
-        else if(a.name < b.name)
-            return -1;
-        else
-            return 0;
-    });
-};
-
 var insertList = function (container, content) {
     var li = document.createElement('li');
     li.innerHTML = content;
@@ -49,9 +37,10 @@ var insertList = function (container, content) {
 
 load(URL).then(
     function (data) {
-        var list = sortByName(data);
-        list.forEach(function (item) {
-            insertList(container, item.name);
+        data.map(function (item) {
+            return item.name;
+        }).forEach(function (item) {
+            insertList(container, item);
         });
     },
     function () {

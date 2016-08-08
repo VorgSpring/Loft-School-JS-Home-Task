@@ -32,7 +32,7 @@ var load = function(url) {
 
 var searchCity = function (data, value) {
     var list = data.filter(function (item) {
-        return item.name.indexOf(value) !== -1;
+        return item.name.toLowerCase().indexOf(value.toLowerCase()) !== -1;
     });
     return list;
 };
