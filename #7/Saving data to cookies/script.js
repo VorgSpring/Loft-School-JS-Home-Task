@@ -45,7 +45,7 @@ var createDiv = function () {
     return newDIV;
 };
 
-// возвращяет слкчайное целое число
+// возвращяет случайное целое число
 var getRandomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 };
