@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add cookie</title>
 </head>
 <body>
-
+<label>
+    name cookie
+    <input type="text" id="nameCookie">
+</label><br>
+<label>
+    value cookie
+    <input type="text" id="valueCookie">
+</label><br>
+<label>
+    days before the delay
+    <input type="number" min="0" id="daysDelay">
+</label><br>
+<button type="button" id="saveCookie">save cookie</button>
+<hr>
+<h1>COOKIES</h1>
+<table id="table">
+    <tr>
+        <th>Name</th>
+        <th>Value</th>
+    </tr>
+</table>
+<script src="script.js"></script>
 </body>
 </html>
