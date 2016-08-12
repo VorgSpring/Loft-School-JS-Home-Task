@@ -14,39 +14,31 @@
             <p class="friends-filter__title">Выберите друзей</p>
             <button class="friends-filter__close"></button>
         </div>
-        <div class="friends-filter__friends">
-            <input type="text" name="search" class="friends-filter__search--my-friend" placeholder="Начните вводить имя друга">
+        <div class="friends-filter__friends friends-filter__friends--my">
+            <input type="text" name="search" class="friends-filter__search friends-filter__search--my" placeholder="Начните вводить имя друга">
             <div class="friends-filter__list">
                 <p class="friends-filter__list-title">Ваши друзья</p>
-                <ul class="friends-filter__items">
-                    <li class="friends-filter__item">
-                        <img src="image/avatar.png" alt="Добавить друга в список" class="friends-filter__avatar">
-                        <p class="friends-filter__name">
-                            Иришка Кочерыжка
-                        </p>
-                        <button class="friends-filter__btn--add"></button>
-                    </li>
-                </ul>
+                <ul class="friends-filter__items"></ul>
             </div>
         </div>
-        <div class="friends-filter__friends">
-            <input type="text" name="search" class="friends-filter__search--friend-in-list" placeholder="Название">
+        <div class="friends-filter__friends friends-filter__friends--selected">
+            <input type="text" name="search" class="friends-filter__search friends-filter__search--selected" placeholder="Начните вводить имя друга">
             <div class="friends-filter__list">
                 <p class="friends-filter__list-title">Друзья в списке</p>
-                <ul class="friends-filter__items">
-                    <li class="friends-filter__item">
-                        <img src="image/avatar.png" alt="Удалить друга из списка" class="friends-filter__avatar">
-                        <p class="friends-filter__name">
-                            Иришка Кочерыжка
-                        </p>
-                        <button class="friends-filter__btn--delete"></button>
-                    </li>
-                </ul>
+                <ul class="friends-filter__items"></ul>
             </div>
         </div>
         <button class="friends-filter__save">Сохранить</button>
     </div>
     <div class="friends-filter__overlay"></div>
+    <template id="friend-template">
+        <li class="friends-filter__item">
+            <img src="" width="45" height="45" alt="Аватарка" class="friends-filter__avatar">
+            <span class="friends-filter__name"></span>
+            <span class="friends-filter__surname"></span>
+            <button class="friends-filter__btn"></button>
+        </li>
+    </template>
     <script src="script/script.js"></script>
 </body>
 </html>

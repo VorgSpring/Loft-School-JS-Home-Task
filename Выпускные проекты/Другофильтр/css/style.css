@@ -203,8 +203,32 @@ button {
   background: none;
   border: none;
 }
+button:focus {
+  outline: none;
+}
 li {
   list-style: none;
+}
+input:focus {
+  outline: none;
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #4f4f4f;
+}
+:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+:focus::-moz-placeholder {
+  color: transparent;
+}
+:focus:-ms-input-placeholder {
+  color: transparent;
 }
 .logo {
   text-align: center;
@@ -218,6 +242,11 @@ li {
   margin: 0 auto;
   border-radius: 8px;
 }
+.friends-filter::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .friends-filter__overlay {
   position: fixed;
   left: 0;
@@ -230,6 +259,7 @@ li {
 .friends-filter__header {
   background-color: #ff8663;
   border-radius: 8px 8px 0 0;
+  margin-bottom: 10px;
 }
 .friends-filter__header::after {
   content: "";
@@ -242,7 +272,7 @@ li {
   font-weight: 500;
   line-height: 20px;
   color: #ffffff;
-  margin: 13px 15px 12px;
+  margin: 14px 15px 11px;
 }
 .friends-filter__close {
   float: right;
@@ -250,4 +280,92 @@ li {
   width: 14px;
   height: 14px;
   margin: 18px 12px 0;
+}
+.friends-filter__friends {
+  width: 309px;
+}
+.friends-filter__friends--my {
+  float: left;
+}
+.friends-filter__friends--my button {
+  background: url("../image/icon-add.svg") no-repeat;
+  margin-right: -2px;
+}
+.friends-filter__friends--selected {
+  float: right;
+}
+.friends-filter__friends--selected button {
+  background: url("../image/icon-delete.svg") no-repeat;
+}
+.friends-filter__search {
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 20px;
+  color: #9f9f9f;
+  padding: 3px 0 3px 27px;
+  margin-bottom: 9px;
+  width: 260px;
+  border-radius: 50px;
+  border: none;
+  background: #ffffff url('../image/icon-search.svg') no-repeat 7px 5px;
+}
+.friends-filter__search--my {
+  margin-left: 15px;
+}
+.friends-filter__search--selected {
+  margin-left: 8px;
+}
+.friends-filter__list {
+  padding: 8px 0 0 15px;
+  background-color: #ffffff;
+}
+.friends-filter__list-title {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #4f4f4f;
+  border-bottom: 1px solid #f0f0f0;
+  margin-right: 15px;
+}
+.friends-filter__items {
+  height: 323px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-right: 5px;
+}
+.friends-filter__item {
+  padding: 5px 5px 7px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.friends-filter__item span {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #4f4f4f;
+}
+.friends-filter__item:hover {
+  background-color: #f0f0f0;
+}
+.friends-filter__avatar {
+  vertical-align: middle;
+  padding: 0 2px;
+  border-radius: 100%;
+}
+.friends-filter__btn {
+  width: 16px;
+  height: 16px;
+  float: right;
+  margin-top: 17px;
+}
+.friends-filter__save {
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 22px;
+  color: #ffffff;
+  border-radius: 13px;
+  margin: 8px 6px;
+  padding: 4px 15px;
+  background-color: #ff8663;
+  float: right;
+  clear: both;
 }

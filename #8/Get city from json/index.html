@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get city from json</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
+</head>
+<body>
+    <input type="text" name="search" id="searchCity">
+    <ul id="container"></ul>
+<script src="script.js"></script>
+<script id="listTemplate" type="text/x-handlebars-template">
+    {{#each list}}
+    <li>{{name}}</li>
+    {{/each}}
+</script>
+</body>
+</html>
