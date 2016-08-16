@@ -284,10 +284,10 @@ input:focus {
 .friends-filter__friends {
   width: 309px;
 }
-.friends-filter__friends--my {
+.friends-filter__friends--all {
   float: left;
 }
-.friends-filter__friends--my button {
+.friends-filter__friends--all button {
   background: url("../image/icon-add.svg") no-repeat;
   margin-right: -2px;
 }
@@ -309,7 +309,7 @@ input:focus {
   border: none;
   background: #ffffff url('../image/icon-search.svg') no-repeat 7px 5px;
 }
-.friends-filter__search--my {
+.friends-filter__search--all {
   margin-left: 15px;
 }
 .friends-filter__search--selected {
@@ -350,6 +350,8 @@ input:focus {
   vertical-align: middle;
   padding: 0 2px;
   border-radius: 100%;
+  font-size: 12px;
+  line-height: 45px;
 }
 .friends-filter__btn {
   width: 16px;

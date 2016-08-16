@@ -15,14 +15,13 @@ var getRandomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 };
 
-function getCoords(elem) { //
+function getCoords(elem) {
     var box = elem.getBoundingClientRect();
 
     return {
         top: box.top + pageYOffset,
         left: box.left + pageXOffset
     };
-
 }
 
 var randomDIV = document.querySelector('#randomDIV');
