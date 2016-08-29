@@ -37,6 +37,19 @@
             display: none;
         }
 
+        .photos {
+            margin-bottom: 20px;
+        }
+
+        .comments {
+            margin-top: 15px;
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
     </style>
 </head>
 <body>
@@ -132,32 +145,39 @@
     <div id="photosList">
         {{#each list}}
         <h1>Альбом "{{title}}"</h1>
-            {{#each photos}}
-            <div class="photos text-left clearfix">
-                <img src="{{src}}" class="">
-                <div>
-                    <span class="glyphicon glyphicon-heart-empty"></span> {{likes}}
-                    <span class="glyphicon glyphicon-bullhorn"></span> {{reposts}}
-                    <span class="glyphicon glyphicon-comment"></span>{{comments_count}}
-                </div>
-                {{#if comments}}
-                <div style="width: 500px">
-                    {{#each comments}}
-                    <div style="font-size: 22px">
-                        <img src="{{from.photo_50}}"  class="img-circle">
-                        <span>{{from.first_name}}</span>
-                        <span>{{from.last_name}}</span>
-                        <p style="font-size: 18px; color: grey; margin-top: 10px;">{{text}}</p>
-                        <hr>
-                    </div>
-                    {{/each}}
-                    {{else}}
-                    <p>К этому фото нет комментариев.</p>
-                    {{/if}}
-                </div>
+        {{#each photos.items}}
+        <div class="photos text-left clearfix">
+            <img src="{{photo_604}}" class="">
+            <div>
+                <span class="glyphicon glyphicon-heart-empty"></span> {{likes.count}}
+                <span class="glyphicon glyphicon-bullhorn"></span> {{reposts.count}}
+                <span class="glyphicon glyphicon-comment"></span>{{comments.count}}
             </div>
-            {{/each}}
+            {{#if comments.count}}
+            <div style="width: 500px">
+                <button class="btn-xs btn-default" data-photo="{{id}}" data-visible="hidden"  type="button" onclick="Controller.commentsRoute(event)">Показать комментарии</button>
+                {{else}}
+                <p>К этому фото нет комментариев.</p>
+                {{/if}}
+            </div>
+        </div>
         {{/each}}
+        {{/each}}
+    </div>
+</script>
+
+
+<script type="text/x-handlebars-template" id="commentsTemplate">
+    <div class="comments show">
+    {{#each list}}
+        <div style="font-size: 22px">
+            <img src="{{from.photo_50}}"  class="img-circle">
+            <span>{{from.first_name}}</span>
+            <span>{{from.last_name}}</span>
+            <p style="font-size: 18px; color: grey; margin-top: 10px;">{{text}}</p>
+            <hr>
+        </div>
+    {{/each}}
     </div>
 </script>
 </body>

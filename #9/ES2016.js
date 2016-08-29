@@ -43,16 +43,16 @@ class SqlCalcES6 extends CalculatorES6 {
     }
 
     sum() {
-        return Math.pow(super.sum.apply(this, arguments), 2);
+        return Math.pow(super.sum(...arguments), 2);
     }
     dif() {
-        return Math.pow(super.dif.apply(this, arguments), 2);
+        return Math.pow(super.dif(...arguments), 2);
     }
     div() {
-        return Math.pow(super.div.apply(this, arguments), 2);
+        return Math.pow(super.div(...arguments), 2);
     }
     mul() {
-        return Math.pow(super.mul.apply(this, arguments), 2);
+        return Math.pow(super.mul(...arguments), 2);
     }
 }
 
