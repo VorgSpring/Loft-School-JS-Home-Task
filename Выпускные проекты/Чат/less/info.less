@@ -1,0 +1,44 @@
+.info {
+  &__user {
+    margin-bottom: 33px;
+  }
+
+  &__photo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 16px;
+    border-radius: 100%;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    width: 62px;
+    height: 62px;
+  }
+
+  &__name {
+    display: inline-block;
+    vertical-align: middle;
+    .fonts(20px, 500, 30px, #ffffff);
+    margin-right: 23px;
+    width: 200px;
+  }
+
+  &__users {
+    display: none;
+    p {
+      .fonts(16px, 500, 20px, #ffffff);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__items {
+    margin-left: 18px;
+  }
+
+  &__item {
+    .fonts(15px, 400, 20px, #ffffff);
+    margin-bottom: 12px;
+    width: 250px;
+  }
+}

@@ -1,0 +1,30 @@
+.chat {
+  height: 100%;
+  display: flex;
+  position: relative;
+  min-width: 800px;
+
+  &__info {
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: @orange-bg;
+    padding: 20px 10px;
+  }
+
+  &__messages {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 21px 30px;
+  }
+
+  &__authorization {
+    .popup();
+    display: none;
+  }
+
+  &__load {
+    .popup();
+    display: none;
+  }
+}

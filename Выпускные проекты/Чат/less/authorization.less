@@ -1,0 +1,56 @@
+.authorization {
+
+  &__form {
+    background-color: #ffffff;
+    padding: 27px 14px 13px;
+    border-radius: 6px;
+    .clearfix();
+
+    input[type="text"] {
+      .fonts(14px, 400, 14px, @dark-grey);
+      border: 2px solid @grey-bg;
+      border-radius: 100px;
+      width: 420px;
+      padding: 10px 15px 9px;
+      margin-bottom: 12px;
+
+      &::placeholder {
+        .fonts(14px, 400, 14px, @grey);
+      }
+    }
+  }
+
+  &__name {
+    display: block;
+  }
+
+  &__login {
+    display: block;
+  }
+
+  &__log {
+    .button();
+    float: right;
+    margin-top: 13px;
+    padding: 5px 24px;
+  }
+
+  &__error {
+    .fonts(10px, 300, 10px, @orange-bg);
+    position: absolute;
+    right: 45px;
+    display: none;
+
+    .empty + & {
+      display: block;
+    }
+
+    &--name {
+      top: 69px;
+    }
+
+    &--login {
+      top: 121px;
+    }
+  }
+}
