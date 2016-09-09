@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чат</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="chat">
+    <div class="chat__info">
+        <div class="info__user">
+            <div class="info__photo">
+                <img src="image/no-photo.jpg" alt="">
+            </div>
+            <p class="info__name">Добро пожаловать!</p>
+        </div>
+        <div class="info__users">
+            <p>Участники (<span></span>)</p>
+            <ul class="info__items"></ul>
+        </div>
+    </div>
+    <div class="chat__messages">
+        <ul class="messages__items"></ul>
+        <form name="messages" class="messages__form">
+            <input type="text" name="message" class="messages__enter" placeholder="Введите сообщение" autocomplete="off" disabled>
+            <input type="submit" value="Отправить" class="messages__send" disabled>
+        </form>
+    </div>
+    <div class="chat__authorization show">
+        <h2 class="authorization__title">Авторизация</h2>
+        <form name="authorization" class="authorization__form">
+            <input type="text" name="nameUser" class="authorization__name" placeholder="ФИО">
+            <span class="authorization__error authorization__error--name">Необходимо указать имя!</span>
+            <input type="text" name="login" class="authorization__login" placeholder="НИК">
+            <span class="authorization__error authorization__error--login">Необходимо указать ник!</span>
+            <input type="submit" value="Войти" class="authorization__log">
+        </form>
+    </div>
+    <div class="chat__load">
+        <h2 class="load__title">Загрузка фото</h2>
+        <form name="load" class="load__form">
+            <div class="load__dropZone">
+                <p>перетащите сюда фото</p>
+            </div>
+            <button type="button" class="load__cancel">Отмена</button>
+            <input type="submit" value="Загрузить" class="load__download" disabled>
+        </form>
+    </div>
+    <div class="load__overlay"></div>
+</div>
+
+<template id="info-template">
+    <li class="info__item"></li>
+</template>
+
+<template id="messages-template">
+    <li class="messages__item">
+        <div class="messages__photo">
+            <img src="image/no-photo.jpg" alt="">
+        </div>
+        <div class="messages__contents">
+            <span class="messages__name"></span>
+            <span class="messages__date"></span>
+            <p class="messages__content"></p>
+        </div>
+    </li>
+</template>
+
+<script src="js/script.js"></script>
+</body>
+</html>

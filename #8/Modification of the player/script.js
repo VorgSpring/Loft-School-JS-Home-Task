@@ -35,7 +35,7 @@ new Promise(function(resolve) {
   });
 }).then(function() {
   return new Promise(function(resolve, reject) {
-    VK.api('users.get', {'name_case': 'gen'}, function(response) {
+    VK.api('usersModule.get', {'name_case': 'gen'}, function(response) {
       if (response.error) {
         reject(new Error(response.error.error_msg));
       } else {

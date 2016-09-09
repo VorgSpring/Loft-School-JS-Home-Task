@@ -26,7 +26,7 @@ var Model = {
         });
     },
     getUser: function() {
-        return this.callApi('users.get', {});
+        return this.callApi('usersModule.get', {});
     },
     getMusic: function() {
         return this.callApi('audio.get', {});
